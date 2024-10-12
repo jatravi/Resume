@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - CodeChef</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #35424a;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation */
+            display: flex; /* Flexbox for layout */
+            align-items: center; /* Center items vertically */
+        }
+        .badge-img {
+            max-width: 150px; /* Increased width */
+            max-height: 150px; /* Increased height */
+            margin-left: 20px; /* Spacing from text */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #35424a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="aboutme.html">About Me</a>
+        <a href="hackerrank.html">Hackerrank</a>
+        <a href="codechef.html">CodeChef</a>
+        <a href="project.html">Projects</a>
+        <a href="https://linktr.ee/Jaat_Ravi">Contact Me</a>
+    </nav>
+
+    <h1 style="text-align: center;">CodeChef</h1>
+
+    <div class="container" id="achievements">
+        <div>
+            <h2>Achievements</h2>
+            <p>Solved over 250 problems on CodeChef and earned a rating of 961. I also received a silver badge for my performance.</p>
+            <p>As a volunteer, I organized the Rust Ed event and am currently a development team member, contributing to the CodeChef ABES Engineering College chapter website.</p>
+        </div>
+        <img src="images/silver_badge_cc.png" alt="Silver Badge" class="badge-img">
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #35424a; color: white;">
+        <p>&copy; 2024 Ravi Choudhary. All rights reserved.</p>
+        <p>
+            <a href="mailto:Choudhary.ravi.takhar@example.com" style="color: white; text-decoration: none;">Email Me</a> |
+            <a href="https://linktr.ee/Jaat_Ravi" target="_blank" style="color: white; text-decoration: none;">Linktree</a> |
+            <a href="https://github.com/jatravi" target="_blank" style="color: white; text-decoration: none;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // Add scroll event to trigger animation
+        const containers = document.querySelectorAll('.container');
+        const options = {
+            root: null,
+            threshold: 0.1,
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                } else {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                }
+            });
+        }, options);
+
+        containers.forEach(container => {
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>

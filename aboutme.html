@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #35424a;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 200px; /* Adjusted size */
+            height: auto;
+            border-radius: 8px;
+        }
+        .info {
+            flex: 1; /* Take available space */
+            margin-right: 20px; /* Spacing between image and text */
+        }
+        h1, h2, h3 {
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #35424a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Resume</a>
+        <a href="hackerrank.html">Hackerrank</a>
+        <a href="codechef.html">CodeChef</a>
+        <a href="project.html">Projects</a>
+        <a href="https://linktr.ee/Jaat_Ravi">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <div class="info">
+            <h1>Ravi Choudhary</h1>
+            <h2>E-mail: <a href="mailto:Choudhary.ravi.takhar@example.com" style="color: black; text-decoration: none;">Choudhary.ravi.takhar@gmail.com</a></h2>
+            <h2>Contact: <a href="messageto:+91-7836081879" style="color: black; text-decoration: none;">+91-7836081879</a></h2>
+        </div>
+        <img src="images/profile.jpg" alt="Profile" class="profile-img">
+    </div>
+
+    <div class="container">
+        <div class="info">
+            <h3>Introduction</h3>
+            <p>Hi, my name is Ravi Choudhary, and I am currently pursuing my B.Tech from ABES Engineering College...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info">
+            <h3>Academic and Extracurricular</h3>
+            <p>In addition to my academic achievements, I’ve joined the Trishul Defence Society and CodeChef club...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info">
+            <h3>Technical Skills and Projects</h3>
+            <p>My passion for coding led me to create projects like the Snake Game and Tic-Tac-Toe in Class 12...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info">
+            <h3>Certifications and Strengths</h3>
+            <p>I am a Certified Python Developer and constantly strive to improve my skills...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info">
+            <h3>Closing</h3>
+            <p>Thank you for watching my video resume. I’m eager to bring my technical skills...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ravi Choudhary. All rights reserved.</p>
+        <p>
+            <a href="mailto:Choudhary.ravi.takhar@example.com" style="color: white; text-decoration: none;">Email Me</a> |
+            <a href="https://linktr.ee/Jaat_Ravi" target="_blank" style="color: white; text-decoration: none;">Linktree</a> |
+            <a href="https://github.com/jatravi" target="_blank" style="color: white; text-decoration: none;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // Add scroll event to trigger animation
+        const infoSections = document.querySelectorAll('.info, h1, h2, h3');
+        const options = {
+            root: null,
+            threshold: 0.1,
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                } else {
+                    // Reset styles when out of view
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                }
+            });
+        }, options);
+
+        infoSections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
